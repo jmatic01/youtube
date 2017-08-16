@@ -18,7 +18,7 @@ export class VideoListComponent implements OnInit {
 
 
 	ngOnInit() {
-		this.videoService.fetchVideos('league of legends')
+		this.videoService.fetchVideos('angular 2')
 			.subscribe(data => {
 				this.appState.videoList = data.items.map(item => {
 					return new Video(

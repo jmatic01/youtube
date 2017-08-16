@@ -5,10 +5,11 @@ import { Video } from "../videos/shared/video.model";
 @Injectable()
 export class AppState {
 
-  videoList: Video[] = [];
-  activeVideo: Video;
+	videoList: Video[] = [];
+	activeVideo: Video;
+	nextVideo: Video;
 
-  constructor() {
-  }
+	constructor() {
+	}
 
 }

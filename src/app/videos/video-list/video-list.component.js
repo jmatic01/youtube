@@ -16,7 +16,7 @@ var VideoListComponent = (function () {
 	}
 	VideoListComponent.prototype.ngOnInit = function () {
 		var _this = this;
-		this.videoService.fetchVideos('league of legends')
+		this.videoService.fetchVideos('angular 2')
 			.subscribe(function (data) {
 			_this.appState.videoList = data.items.map(function (item) {
 				return new video_model_1.Video(item.id.videoId, item.snippet.title, item.snippet.thumbnails.high.url, item.snippet.channelTitle, item.snippet.channelId, moment(item.snippet.publishedAt).fromNow(), item.snippet.description);

@@ -1,7 +1,6 @@
 nav {
 	background-color: #cc181e;
 	border-radius: 0;
-	margin-bottom: 50px;
 }
 
 .navbar-brand > img {
@@ -20,5 +19,4 @@ nav {
 	margin-right: 50px;
 	text-decoration: none;
 	color: #fff;
-	text-transform: uppercase;
 }

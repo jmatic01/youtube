@@ -13,12 +13,24 @@ import { VideosComponent } from "./videos/videos.component";
 import { VideoService } from "./videos/shared/video.service";
 import { YoutubeSafeUrlPipe } from "./shared/youtube-safe-url.pipe";
 import { PaginationControlsCmp, PaginatePipe, PaginationService } from "ng2-pagination";
-
+import { routing }        from './app.routing';
+import { AlertService, AuthenticationService, UserService } from './services/index';
+import { LoginComponent } from './login/index';
+import { FormsModule }    from '@angular/forms';
+import { HomeComponent } from './home/index';
+import { fakeBackendProvider } from './helpers/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+import { RegisterComponent } from './register/index';
+import { AuthGuard } from './guards/index';
+import { AlertComponent } from './directives/index';
 
 @NgModule({
 	imports: [
 		BrowserModule,
-		HttpModule
+		HttpModule,
+		FormsModule,
+		routing
 	],
 	declarations: [
 		AppComponent,
@@ -30,7 +42,11 @@ import { PaginationControlsCmp, PaginatePipe, PaginationService } from "ng2-pagi
 		VideoDetailComponent,
 		PaginationControlsCmp,
 		YoutubeSafeUrlPipe,
-		PaginatePipe
+		PaginatePipe,
+		LoginComponent,
+		HomeComponent,
+		RegisterComponent,
+		AlertComponent
 	],
 	bootstrap: [
 		AppComponent
@@ -38,7 +54,14 @@ import { PaginationControlsCmp, PaginatePipe, PaginationService } from "ng2-pagi
 	providers: [
 		AppState,
 		VideoService,
-		PaginationService
+		PaginationService,
+		AuthenticationService,
+		UserService,
+		AlertService,
+		fakeBackendProvider,
+		MockBackend,
+		BaseRequestOptions,
+		AuthGuard
 	]
 })
 export class AppModule {
